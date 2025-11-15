@@ -25,3 +25,53 @@
 ![image](https://github.com/user-attachments/assets/7649e6e1-d5d1-49b3-b83f-965d44651d05)
 
 #### [Download](https://github.com/afkarxyz/SpotiFLAC/releases/download/v0/FLAC-Checker.zip) FLAC Checker
+
+---
+
+## Development
+
+### Project Structure
+
+SpotiFLAC follows a modular architecture for maintainability and testability:
+
+```
+spotiflac/
+├── __init__.py              # Package initialization
+├── __main__.py              # CLI entry point (python -m spotiflac.__main__)
+├── controllers/             # Business logic controllers
+│   └── download_controller.py
+├── gui/                     # GUI components
+│   ├── dashboard.py
+│   ├── process.py
+│   ├── settings.py
+│   ├── theme.py
+│   ├── about.py
+│   └── theme_manager.py     # Theme management
+├── models/                  # Data models
+│   └── track.py
+├── services/                # Service layer
+│   ├── spotify.py           # Spotify metadata
+│   ├── tidal.py             # Tidal integration
+│   ├── deezer.py            # Deezer integration
+│   ├── settings.py          # Settings persistence
+│   └── theming.py           # Theme utilities
+└── workers/                 # Background workers
+    ├── metadata.py
+    ├── download.py
+    └── secret.py
+```
+
+### Key Features
+
+- **Modular Architecture**: Clear separation of GUI, business logic, and services
+- **Type Safety**: Full type annotations with mypy compatibility
+- **Testability**: Dependency injection for easy mocking
+- **Settings Management**: Type-safe settings with `SettingsRepository`
+- **Theme System**: Centralized theme management with `ThemeManager`
+- **Worker Threads**: Non-blocking downloads and metadata fetching
+
+---
+
+## License
+
+See LICENSE file for details.
