@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Downloads
+downloads/
+*.flac
+*.mp3
+
+# Temporary
+*.tmp
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Legacy backup
+legacy_backup/
+
+# Test files
+test_*.py
+tests/
+
+# Documentation
+*.md
+!README.md
+!RUNNING.md
