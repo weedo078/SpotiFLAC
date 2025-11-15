@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  spotiflac:
+    build: .
+    image: spotiflac:latest
+    container_name: spotiflac
+    
+    # Mount downloads directory
+    volumes:
+      - ./downloads:/downloads
+      - ./settings:/app/settings  # Persist settings
+    
+    # Environment variables
+    environment:
+      - SPOTIFLAC_OUTPUT_DIR=/downloads
+      - QT_QPA_PLATFORM=offscreen
+      - DISPLAY=:99
+    
+    # Restart policy
+    restart: unless-stopped
+    
+    # Optional: Expose port for future web interface
+    # ports:
+    #   - "8080:8080"
+    
+    # Resource limits (adjust as needed)
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '1'
+          memory: 512M
